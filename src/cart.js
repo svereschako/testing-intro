@@ -26,8 +26,16 @@ function changeQuantity(crt, id, qnt) {
 		throw new RangeError('не позволяет указать количество больше остатка');
 	return crt; 
 }
-function removeFromCart() { return notImplemented(); }
-function calculateCartSubtotal() { return notImplemented(); }
+function removeFromCart(crt, ind) { 
+	//return notImplemented();
+	const index =  crt.map((prod) => prod.id).indexOf(ind);
+	if(index != -1)
+		crt.splice(index, 1);
+	return crt;
+}
+function calculateCartSubtotal() { 
+	return notImplemented();	
+}
 function calculateOrderTotal() { return notImplemented(); }
 
 const cartApi = { addToCart, changeQuantity, removeFromCart, calculateCartSubtotal, calculateOrderTotal };

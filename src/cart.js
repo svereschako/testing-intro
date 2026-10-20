@@ -33,8 +33,10 @@ function removeFromCart(crt, ind) {
 		crt.splice(index, 1);
 	return crt;
 }
-function calculateCartSubtotal() { 
-	return notImplemented();	
+function calculateCartSubtotal(crt) { 
+	//return notImplemented();
+	const init = 0;
+	return crt.reduce((accum, current) => accum + current.price*current.quantity, init);	
 }
 function calculateOrderTotal() { return notImplemented(); }
 
